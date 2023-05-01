@@ -1,37 +1,24 @@
 #pragma once
-#include <list>
-#include "String.h"
-
-struct CityNeighbours;
-
-struct Cities {
-	String name;
-	int x;
-	int y;
-	std::list<CityNeighbours> neighbours;
-};
-
-struct CityNeighbours {
-	Cities* city;
-	int distance;
-};
+#include "List.h"
 
 class Heap {
 	struct Leaf{
-		Cities* city;
+		City* city;
 		int* distance;
 	};
 	Leaf* leaf;
+	int* indexes;
 	int size;
+	int WIDTH;
 public:
-	Heap(Cities* city, int* distance, int size);
-	~Heap() { delete[]leaf; }
+	Heap(City** city, int* distance, int size, int WIDTH);
+	~Heap();
 	void heapify(int index);
 	void buildHeap();
 	int getSize() const { return size; }
 	void removeMin();
 	int getMinDistance() const { return *leaf[0].distance; }
-	Cities* getMinCity() const { return leaf[0].city; }
-	int* getDistance(Cities* city);
-	bool isCity(Cities* city) const;
+	City* getMinCity() const { return leaf[0].city; }
+	void replace(int i);
+	bool changeDistance(City* city, int temp_distance, int distance_2);
 };

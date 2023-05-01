@@ -4,11 +4,11 @@
 class PriorityQueue {
 	Heap heap;
 public:
-	PriorityQueue(Cities* city, int* distance, int size) : heap(city, distance, size) {}
+	PriorityQueue(City** city, int* distance, int size, int WIDTH) : heap(city, distance, size, WIDTH) {}
 	bool isEmpty() const { return !(bool(heap.getSize())); }
 	void removeMin();
-	bool isCity(Cities* city) const { return heap.isCity(city); }
 	int getMinDistance() const { return heap.getMinDistance(); }
-	Cities* getMinCity() const { return heap.getMinCity(); }
-	int* getDistance(Cities* city) { return heap.getDistance(city); }
+	City* getMinCity() const { return heap.getMinCity(); }
+	void replace(int i) { heap.replace(i); }
+	bool changeDistance(City* city, int temp_distance, int distance_2) { return heap.changeDistance(city, temp_distance, distance_2); }
 };

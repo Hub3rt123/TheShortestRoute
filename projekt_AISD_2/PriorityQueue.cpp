@@ -2,5 +2,5 @@
 
 void PriorityQueue::removeMin() {
 	heap.removeMin();
-	heap.buildHeap();
+	heap.heapify(1);
 }

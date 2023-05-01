@@ -132,10 +132,14 @@
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="PriorityQueue.cpp" />
+    <ClCompile Include="List.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Heap.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="String.h" />
   </ItemGroup>
